@@ -1,0 +1,127 @@
+.menubarActive {
+  height: 100vh;
+  width: 90px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: black;
+  /* display: none; */
+  transition: all ease 500ms;
+  z-index: 4;
+}
+
+.menubarInactive {
+  height: 100vh;
+  width: 90px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: black;
+  /* display: none; */
+  margin-right: -90px;
+  transition: all ease 500ms;
+  z-index: 4;
+}
+
+.menuDiv {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  transition: ease all 200ms;
+  cursor: pointer;
+}
+
+.menuDiv:hover{
+    transform: scale(1.05)
+}
+
+.menuDivIcon {
+  width: 30px;
+  color: white;
+}
+
+.menuDivText {
+  font-size: 12px;
+  color: white;
+  font-weight: 300;
+}
+
+
+@media only screen and (max-width: 520px){
+
+  .menubarActive {
+  height: 100vh;
+  width: 60px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: black;
+  /* display: none; */
+  transition: all ease 500ms;
+  z-index: 4;
+}
+
+.menubarInactive {
+  height: 100vh;
+  width: 60px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: black;
+  /* display: none; */
+  margin-right: -90px;
+  transition: all ease 500ms;
+  z-index: 4;
+}
+
+.menuDiv {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  transition: ease all 200ms;
+  cursor: pointer;
+}
+
+.menuDiv:hover{
+    transform: scale(1.05)
+}
+
+.menuDivIcon {
+  width: 25px;
+  color: white;
+}
+
+.menuDivText {
+  font-size: 12px;
+  color: white;
+  font-weight: 300;
+}
+
+
+}

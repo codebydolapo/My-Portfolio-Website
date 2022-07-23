@@ -3,6 +3,7 @@
 	height: 100vh;
 	overflow-x: hidden;
 	scroll-behavior: smooth;
+	background: white;
 }
 
 .container::-webkit-scrollbar{

@@ -1,0 +1,123 @@
+.portfoliocard{
+    height: 95%;
+    max-height: 440px;
+    width: 250px;
+    min-width: 250px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: auto 5px;
+    transition: all ease 200ms;
+}
+
+.portfoliocard:hover{
+    transform: scale(1.05)
+}
+
+.image{
+    height: 140px;
+    width: 250px;
+    /* border: 1px solid white; */
+    border-radius: inherit;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.title{
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+}
+
+.buttonDiv{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button{
+    width: 48%;
+    height: 25px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: 0;
+    background: rgb(56, 72, 116);
+    color: white;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.stackDiv{
+    height: auto;
+    max-height: 190px;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+@media only screen and (max-width: 520px){
+    .portfoliocard{
+    height: 300px;
+    max-height: 380px;
+    width: 200px;
+    min-width: 200px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: auto 5px;
+    transition: all ease 200ms;
+}
+
+.portfoliocard:hover{
+    transform: scale(1.05)
+}
+
+.image{
+    height: 112px;
+    width: 200px;
+    /* border: 1px solid white; */
+    border-radius: inherit;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.title{
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+}
+
+.buttonDiv{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button{
+    width: 48%;
+    height: 23px;
+    font-size: 11px;
+    border-radius: 5px;
+    border: 0;
+    background: rgb(56, 72, 116);
+    color: white;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.stackDiv{
+    height: auto;
+    max-height: 190px;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+}

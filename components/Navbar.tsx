@@ -1,76 +1,36 @@
-import styles from "../styles/navbar.module.css";
-import Image from "next/image";
-import {
-  BellIcon,
-  ChatIcon,
-  ChevronDownIcon,
-  HomeIcon,
-  UserGroupIcon,
-  ViewGridIcon,
-} from "@heroicons/react/solid";
-import {
-  FlagIcon,
-  PlayIcon,
-  SearchIcon,
-  ShoppingCartIcon,
-} from "@heroicons/react/outline";
-import { signOut } from "next-auth/react";
+import styles from '../styles/navbar.module.css'
+import { ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/outline'
+import {useDispatch, useSelector} from 'react-redux'
+import {menuActive, menuInactive} from './reducers/actions'
 
+function Navbar(){
 
-function Navbar({session}) {
-  return (
-    <div className={styles.navBar}>
-      <div className={styles.navBarLeft}>
-        <h1>PN</h1>
-        <div className={styles.inputDiv}>
-          <SearchIcon className={styles.searchIcon} />
-          <input
-            type="text"
-            className={styles.inputField}
-            placeholder="Search Purple"
-          />
-        </div>
-      </div>
-      <div className={styles.navBarCenter}>
-        <div>
-          <HomeIcon className={styles.navBarCenterIcons} />
-        </div>
-        <div>
-          <FlagIcon className={styles.navBarCenterIcons} />
-        </div>
+    const dispatch = useDispatch();
+    const menuState = useSelector((state: any)=>state.menuState)
 
-        <div>
-          <PlayIcon className={styles.navBarCenterIcons} />
-        </div>
+    function dispatchFunctions(){
+        if(menuState){
+            dispatch(menuInactive())
+        } else if (!menuState){
+            dispatch(menuActive())
+        }
+    }
 
-        <div>
-          <ShoppingCartIcon className={styles.navBarCenterIcons} />
+    return(
+        <div className = {styles.navbar}>
+            <div className = {styles.left}>
+                <img src = '/icons/bd.jpg' alt = ''/>
+            </div>
+            <div className = {styles.right}>
+                <div className = {styles.navigationDiv} onClick = {dispatchFunctions}>
+                    <p className = {styles.menu}>MENU</p>
+                    {/* {menuState && <ChevronUpIcon className = {styles.menuIcon}/>}
+                    {!menuState && <ChevronDownIcon className = {styles.menuIcon}/>} */}
+                    <ChevronUpIcon className = {menuState ? styles.menuIconActive : styles.menuIconInactive}/>
+                </div>
+            </div>
         </div>
-
-        <div>
-          <UserGroupIcon className={styles.navBarCenterIcons} />
-        </div>
-      </div>
-      <div className={styles.navBarRight}>
-        <p className={styles.username}>{session.user.name}</p>
-        {/* <div className={styles.rightNav}>
-          <div>
-            <ViewGridIcon className={styles.navBarRightIcons} />
-          </div>
-          <div>
-            <ChatIcon className={styles.navBarRightIcons} />
-          </div>
-          <div>
-            <BellIcon className={styles.navBarRightIcons} />
-          </div>
-          <div>
-            <ChevronDownIcon className={styles.navBarRightIcons} />
-          </div>
-        </div> */}
-        <img src = {session.user.image} alt  = '' className = {styles.profileImg} onClick= {()=>{signOut()}}/>
-      </div>
-    </div>
-  );
+    )
 }
 
-export default Navbar;
+export default Navbar

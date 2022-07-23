@@ -1,27 +1,13 @@
-.mainBody{
-    height: calc(100vh - 50px);
-    max-height: calc(100vh - 50px);
+.mainbody{
+    min-height: 100vh;
+    height: 100vh;
     width: 100vw;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 50px;
-    background: #ffffff;
-    object-fit: contain;
+    padding-top: 50px;
     overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
-@media only screen and (max-width: 720px){
-    .mainBody{
-    height: calc(100vh - 50px);
-    max-height: calc(100vh - 50px);
-    width: 100vw;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 50px;
-    background: #ffffff;
-    object-fit: contain;
-    overflow: hidden;
-}
+.mainbody::-webkit-scrollbar{
+    display: none;
 }
